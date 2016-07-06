@@ -23,10 +23,12 @@ var film = $('#term').val();
       //User didn't screw it up, call the API!!!//
       $('#poster').html("<h2 class='loading'> Your poster is on the way!!</h2>");
       $.getJSON("http://api.themoviedb.org/3/search/movie?api_key=b214b2f6cd4cb56d9c0a986a2215d33f&query=" + film, function(json){
-          if(json != 'Nothing found.'){
+          if(json.total_results != 0){
             $('#poster').html('<img id="thePoster" src=https://image.tmdb.org/t/p/original' + json.results[0]["poster_path"] + ' />');
+            $('#term').val(" ");
           } else {
             $('#poster').html('<h2>Nothing found</h2>');
+            $('#term').val(" ");
           }
       });
 
@@ -35,6 +37,11 @@ var film = $('#term').val();
 
 
   $('#search').click(getPoster);
+  $('#term').keyup(function(event){
+    if(event.keyCode == 13){
+      getPoster()
+    }
+  })
 
 
 });
