@@ -45,7 +45,7 @@ $(document).ready(function() {
                     $('#term').val(" ");
                 })
                 $('#year').html('<h3> ' + year + '</h3>').hide().fadeIn('slow');
-                $('#similar').html('<h3> Find others like this</h3>').hide().fadeIn('slow');
+                $('#similar').html('<a href=#>Find others like this</a>').hide().fadeIn('slow');
               } else {
                 $('#poster').html('<h2>Nothing found</h2>').addClass('fade-in');
                 reset();
@@ -69,10 +69,10 @@ $(document).ready(function() {
                   $('#term').val(" ");
               })
               $('#year').html('<h3> ' + year + '</h3>').hide().fadeIn('slow')
-              $('#similar').html('<h3> Find others like this</h3>').hide().fadeIn('slow');
+              $('#similar').html('<a href=#>Find others like this</a>').hide().fadeIn('slow');
               j += 1;
                 if(j >= json.results.length){
-                  $('#similar').html('<h3> Thats all folks!</h3>').hide().fadeIn('slow');
+                  $('#similar').html("<h3> You've reached the end.</h3>").hide().fadeIn('slow');
                 }
             } else {
               j+=1;
