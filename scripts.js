@@ -1,4 +1,3 @@
-
 // b214b2f6cd4cb56d9c0a986a2215d33f API KEY!!!!!
 // 'http://api.themoviedb.org/3/search/movie?api_key=' + api_key + '&query=fight+club
 // http://api.themoviedb.org/3/search/movie?api_key=b214b2f6cd4cb56d9c0a986a2215d33f&query=batman+returns
@@ -14,7 +13,7 @@ $(document).ready(function() {
         }
       });
 
-  
+
       var reset = function() {
         $('#term').val(" ");
         $('#plot').html(" ");
@@ -40,15 +39,15 @@ $(document).ready(function() {
           $.getJSON("http://api.themoviedb.org/3/search/movie?api_key=b214b2f6cd4cb56d9c0a986a2215d33f&query=" + film, function(json){
               if(json.total_results != 0){
                 var year = json.results[i]["release_date"].substring(0, 4);
-                $('#poster').html('<img id="thePoster" src=https://image.tmdb.org/t/p/original' + json.results[i]["poster_path"] + ' />');
-                $('#plot').html('<h2 class="loading">' + json.results[i]["overview"] + ' </h2>');
+              var poster =   $('#poster').html('<img id="thePoster" src=https://image.tmdb.org/t/p/original' + json.results[i]["poster_path"] + ' />').hide().fadeIn('slow');
+                $('#plot').html('<h2 class="loading">' + json.results[i]["overview"] + ' </h2>').hide().fadeIn('slow');
                 $('#term').click(function(){
                     $('#term').val(" ");
                 })
-                $('#year').html('<h3> ' + year + '</h3>')
-                $('#similar').html('<h3> Find others like this</h3>');
+                $('#year').html('<h3> ' + year + '</h3>').hide().fadeIn('slow');
+                $('#similar').html('<h3> Find others like this</h3>').hide().fadeIn('slow');
               } else {
-                $('#poster').html('<h2>Nothing found</h2>');
+                $('#poster').html('<h2>Nothing found</h2>').addClass('fade-in');
                 reset();
               }
           });
@@ -63,17 +62,17 @@ $(document).ready(function() {
         $.getJSON("http://api.themoviedb.org/3/search/movie?api_key=b214b2f6cd4cb56d9c0a986a2215d33f&query=" + film, function(json){
             if(json.results[j]["poster_path"] !== null) {
               var year = json.results[j]["release_date"].substring(0, 4);
-              $('#poster').html('<img id="thePoster" src=https://image.tmdb.org/t/p/original' + json.results[j]["poster_path"] + ' />');
-              $('#plot').html('<h2 class="loading">' + json.results[j]["overview"] + ' </h2>');
+              $('#poster').html('<img id="thePoster" src=https://image.tmdb.org/t/p/original' + json.results[j]["poster_path"] + ' />').hide().fadeIn('slow');
+              $('#plot').html('<h2>' + json.results[j]["overview"] + ' </h2>').hide().fadeIn('slow');
               // $('#term').val(film + " - " + json.results[j]["release_date"]);
               $('#term').click(function(){
                   $('#term').val(" ");
               })
-              $('#year').html('<h3> ' + year + '</h3>')
-              $('#similar').html('<h3> Find others like this</h3>');
+              $('#year').html('<h3> ' + year + '</h3>').hide().fadeIn('slow')
+              $('#similar').html('<h3> Find others like this</h3>').hide().fadeIn('slow');
               j += 1;
                 if(j >= json.results.length){
-                  $('#similar').html('<h3> Thats all folks!</h3>');
+                  $('#similar').html('<h3> Thats all folks!</h3>').hide().fadeIn('slow');
                 }
             } else {
               j+=1;
@@ -102,4 +101,4 @@ $(document).ready(function() {
   });
 
 
-});
+})

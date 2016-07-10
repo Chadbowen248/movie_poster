@@ -28,7 +28,7 @@ input {
 
 img {
   width: 100%;
-  margin-top: 70px;
+  margin-top: 35px;
   border-radius: 15px;
 }
 
@@ -82,21 +82,80 @@ h1 , a{
   font-size: 60px;
 }
 
-#plot {
-  height: 350px;
-}
 ::-webkit-input-placeholder {
    color: black;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: black;  
+   color: black;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: black;  
+   color: black;
 }
 
 :-ms-input-placeholder {
-   color: black;  
+   color: black;
 }
+
+
+#plot {
+  width: 60%;
+  margin: 0 auto;
+  color: #CC513E;
+  font-family: 'Oswald', sans-serif;
+}
+
+#plot h2 {
+  color: #CC513E;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+#year {
+  font-family: 'Oswald', sans-serif;
+  color: #FFD700;
+}
+
+
+
+/*ANIMATION*/
+
+/*@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+@-webkit-keyframes fade { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fade { from { opacity:0; } to { opacity:1; } }
+@keyframes fade { from { opacity:0; } to { opacity:1; } }*/
+
+/*.fade-in {
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+.fadeAgain {
+  opacity:0;
+  -webkit-animation:fade ease-in 1;
+  -moz-animation:fade ease-in 1;
+  animation:fade ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}*/
