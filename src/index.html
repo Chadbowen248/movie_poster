@@ -4,8 +4,8 @@
 <head>
     <title>Poster-o-matic</title>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.min.js"></script>
-    <script src="scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="projects.js"></script>
     <script type="text/javascript">
         try {
             Typekit.load();
@@ -23,11 +23,12 @@
             <h1>Poster-o-matic</h1>
         </header>
         <section id="fetch">
-            <input type="text" id="term" placeholder="enter a movie" onfocus="this.placeholder=''" />
+            <input onclick='this.clearInput' type="text" id="term" placeholder="enter a movie" onfocus="this.placeholder=''" />
         </section>
 
         <div class="holder">
             <section id="poster">
+
             </section>
         </div>
         <section id="year">

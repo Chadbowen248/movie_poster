@@ -31,7 +31,7 @@ input {
 }
 
 img {
-  width: 100%;
+  width: 70%;
   margin-top: 35px;
   border-radius: 15px;
 }
@@ -65,12 +65,13 @@ img {
   font-family: 'Oswald', sans-serif;
 }
 
-#similar a {
+#similar {
   color: #FFD700;
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   font-size: 20px;
   text-decoration: none;
+  cursor: default;
 }
 #similar h3 {
   font-family: 'Oswald', sans-serif;
